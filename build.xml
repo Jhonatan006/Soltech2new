@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="Soltech">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../eclipse/java-2023-12/eclipse/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="Soltech.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="lib/antlr-2.7.7.jar"/>
+        <pathelement location="lib/byte-buddy-1.12.8.jar"/>
+        <pathelement location="lib/c3p0-0.9.5.5.jar"/>
+        <pathelement location="lib/classmate-1.0.9.14.jar"/>
+        <pathelement location="lib/commons-beanutils-1.9.4.jar"/>
+        <pathelement location="lib/commons-collections4-4.4.jar"/>
+        <pathelement location="lib/commons-digester-2.1.jar"/>
+        <pathelement location="lib/commons-logging-1.2.jar"/>
+        <pathelement location="lib/hibernate-c3p0-5.6.5.Final.jar"/>
+        <pathelement location="lib/hibernate-commons-annotations-5.1.2.Final.jar"/>
+        <pathelement location="lib/hibernate-core-5.6.5.Final.jar"/>
+        <pathelement location="lib/hibernate-entitymanager-5.6.5.Final.jar"/>
+        <pathelement location="lib/hibernate-validator-7.0.2.Final.jar"/>
+        <pathelement location="lib/itext-5.0.5.jar"/>
+        <pathelement location="lib/jasperreports-6.12.2.jar"/>
+        <pathelement location="lib/jasperreports-fonts-6.12.2.jar"/>
+        <pathelement location="lib/jasperreports-javaflow-6.12.2.jar"/>
+        <pathelement location="lib/javax.persistence-api-2.2.jar"/>
+        <pathelement location="lib/jaxb-api-2.3.1.jar"/>
+        <pathelement location="lib/jboss-logging-3.4.3.Final.jar"/>
+        <pathelement location="lib/jta-1.1.jar"/>
+        <pathelement location="lib/JTattoo-1.6.13.jar"/>
+        <pathelement location="lib/LGoodDatePicker-11.2.1.jar"/>
+        <pathelement location="lib/mchange-commons-java-0.2.20.jar"/>
+        <pathelement location="lib/postgresql-42.2.16.jar"/>
+    </path>
+    <path id="run.VentanaPrincipal (2).classpath">
+        <path refid="Soltech.classpath"/>
+        <pathelement location="lib/antlr-2.7.7.jar"/>
+        <pathelement location="lib/byte-buddy-1.12.8.jar"/>
+        <pathelement location="lib/c3p0-0.9.5.5.jar"/>
+        <pathelement location="lib/classmate-1.0.9.14.jar"/>
+        <pathelement location="lib/commons-beanutils-1.9.4.jar"/>
+        <pathelement location="lib/commons-collections4-4.4.jar"/>
+        <pathelement location="lib/commons-digester-2.1.jar"/>
+        <pathelement location="lib/commons-logging-1.2.jar"/>
+        <pathelement location="lib/hibernate-c3p0-5.6.5.Final.jar"/>
+        <pathelement location="lib/hibernate-commons-annotations-5.1.2.Final.jar"/>
+        <pathelement location="lib/hibernate-core-5.6.5.Final.jar"/>
+        <pathelement location="lib/hibernate-entitymanager-5.6.5.Final.jar"/>
+        <pathelement location="lib/hibernate-validator-7.0.2.Final.jar"/>
+        <pathelement location="lib/itext-5.0.5.jar"/>
+        <pathelement location="lib/jasperreports-6.12.2.jar"/>
+        <pathelement location="lib/jasperreports-fonts-6.12.2.jar"/>
+        <pathelement location="lib/jasperreports-javaflow-6.12.2.jar"/>
+        <pathelement location="lib/javax.persistence-api-2.2.jar"/>
+        <pathelement location="lib/jaxb-api-2.3.1.jar"/>
+        <pathelement location="lib/jboss-logging-3.4.3.Final.jar"/>
+        <pathelement location="lib/jta-1.1.jar"/>
+        <pathelement location="lib/JTattoo-1.6.13.jar"/>
+        <pathelement location="lib/LGoodDatePicker-11.2.1.jar"/>
+        <pathelement location="lib/mchange-commons-java-0.2.20.jar"/>
+        <pathelement location="lib/postgresql-42.2.16.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="Soltech.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="VentanaPrincipal (2)">
+        <java classname="py.com.soltech.vista.principal.VentanaPrincipal" failonerror="true" fork="yes">
+            <classpath refid="run.VentanaPrincipal (2).classpath"/>
+        </java>
+    </target>
+</project>
